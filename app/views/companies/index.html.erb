@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Example without REACTJS</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="form-group">
+      <label>
+        Choose a Company from the list:
+      </label>
+      <%= select_tag('companies',
+        options_from_collection_for_select(@companies, 'id', 'name', params[:company_id]),
+          class: 'form-control', include_blank: true) %>
+    </div>
+    <div class="form-group">
+      <select id="users" class="form-control hidden">
+      </select>
+    </div>
+    <div class="form-group">
+      <select id="users" class="form-control hidden">
+      </select>
+    </div>
+    <div class="form-group">
+      <select id="machine_data" class="form-control hidden">
+      </select>
+    </div>
+
+    <div class="form-group">
+      <textarea 
+       class="hidden"
+       id="ingredients"
+       rows="4" cols="50"></textarea>
+    </div>
+  </div>
+
+</div>
+<%= link_to 'New Company', new_company_path %>
